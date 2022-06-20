@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kalkulator Sederhana</title>
+	<style type="text/css">
+		body {
+			font-family: system-ui;
+			color: white;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		input {
+			background-color: darkgrey;
+		}
+		div {
+		   	background-color: grey;
+   			margin: auto;
+   			padding: 10px;
+   			width: 300px;
+   			height: 300px;
+   			border-radius: 10px;
+   			border-style: solid;
+   			border-color: seagreen;
+   		}
+   		select {
+   			background-color: darkgrey;
+   		}
+   		p {
+   			text-align: right;
+   			margin: 20px 20px ;
+   		}
+   		select {
+   			cursor: pointer;
+   		}
+   		.button {
+			cursor: pointer;
+   		}
+   	</style>
+</head>
+
+<body>
+	<script language="JavaScript" type="text/javascript">
+
+	function hitung(){
+
+	var myForm = document.form1;
+	var x=eval(myForm.x.value);
+	var y=eval(myForm.y.value);
+	var pil= myForm.opt.value;
+	if (pil == "tambah") {
+	var z = x + y;
+	 }else if (pil == "kurang") {
+	var z = x - y;
+	 } else if (pil == "kali") {
+	var z = x * y;
+	 } else if (pil == "bagi") {
+	var z = x / y;
+	 }
+	 myForm.hasil.value = z;
+	 myForm.x.value = "";
+	 myForm.y.value = "";
+	}
+	function resetForm(){
+	document.form1.reset();
+	}
+
+	document.getElementsByTagName("h1")[0].style.fontSize = "6vw";
+
+	</script>
+		
+	<div align="center">
+		<h1>Calculator</h1>
+		<form name="form1" action="#">
+		<p>Variabel 1  <input type="text" name="x" /></p>
+		<p>Variabel 2  <input type="text" name="y" /></p>
+		<p>Hasil  <input type="text" name="hasil" disabled="true" /></p>
+		<h4>operator <select name="opt">
+		 <option value="tambah"> + (tambah)</option>
+		 <option value="kurang"> - (kurang)</option>
+		 <option value="kali"> * (kali)</option>
+		 <option value="bagi"> / (bagi)</option>
+		</select>
+		</h4>
+		<input class="button" type="button" value="=" onClick="hitung()" />
+		<input class="button" type="button" value="HAPUS" onClick="resetForm()" />
+		</form>
+	</div>
+</body>
+</html>
